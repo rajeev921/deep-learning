@@ -1,16 +1,18 @@
 '''
-Predicting Student Admissions with Neural Networks
+Predicting Student Admissions with Neural Networks. The goal here is to predict 
+if a student will be admitted to a graduate program based on these features. 
+
 The dataset originally came from here: http://www.ats.ucla.edu/
 
-Loading the data
-To load the data and format it nicely, we will use two very useful packages called Pandas and Numpy. You can read on the documentation here:
+This dataset has three input features: GRE score, GPA, and the rank of the 
+undergraduate school (numbered 1 through 4). Institutions with rank 1 have the 
+highest prestige, those with rank 4 have the lowest
 
-https://pandas.pydata.org/pandas-docs/stable/
-https://docs.scipy.org/
 '''
 
 import PrepareData as prepData
 
+# 8. prepare the data
 features, targets, features_test, targets_test = prepData.splitTrainTestData()
 
 #################### Defining the model architecture ####################

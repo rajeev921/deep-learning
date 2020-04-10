@@ -1,3 +1,23 @@
+'''
+You might think there will be three input units, but we actually need to 
+transform the data first. The rank feature is categorical, the numbers don't 
+encode any sort of relative values. Rank 2 is not twice as much as rank 1, 
+rank 3 is not 1.5 more than rank 2. Instead, we need to use dummy variables to 
+encode rank, splitting the data into four new columns encoded with ones or zeros. 
+Rows with rank 1 have one in the rank 1 dummy column, and zeros in all other 
+columns. Rows with rank 2 have one in the rank 2 dummy column, and zeros in all 
+other columns. And so on.
+
+We'll also need to standardize the GRE and GPA data, which means to scale the 
+values such that they have zero mean and a standard deviation of 1. This is 
+necessary because the sigmoid function squashes really small and really large 
+inputs. The gradient of really small and large inputs is zero, which means that 
+the gradient descent step will go to zero too. Since the GRE and GPA values are 
+fairly large, we have to be really careful about how we initialize the weights or 
+the gradient descent steps will die off and the network won't train. Instead, if 
+we standardize the data, we can initialize the weights easily and everyone is happy.
+
+'''
 ############ Loading the data ################
 # Importing pandas and numpy
 import pandas as pd
@@ -148,6 +168,7 @@ def splitTrainTestData():
 	
 	# In order to test our algorithm, we'll split the data into a Training and a Testing set. 
 	# The size of the testing set will be 10% of the total data.
+	
 	#7. split feature and target
 	features, targets, features_test, targets_test = split_feature_and_target(train_data, test_data)
 
