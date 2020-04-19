@@ -163,7 +163,7 @@ we've calculated are a bit difficult to work with. A very positive word like "am
 whereas a very negative word like "terrible" has a value around 0.18. Those values aren't easy to compare for 
 a couple of reasons:
 
-Right now, 1 is considered neutral, but the absolute value of the postive-to-negative rations of very postive 
+Right now, 1 is considered neutral, but the absolute value of the postive-to-negative ratios of very postive 
 words is larger than the absolute value of the ratios for the very negative words. So there is no way to 
 directly compare two numbers and see if one word conveys the same magnitude of positive sentiment as another 
 word conveys negative sentiment. So we should center all the values around netural so the absolute value fro 
