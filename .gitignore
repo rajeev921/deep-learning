@@ -39,4 +39,6 @@ __pypackages__/
 dmypy.json
 
 # Data
-MNIST_data/
+data/
+checkpoints/
+assets/

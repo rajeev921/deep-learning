@@ -1,6 +1,7 @@
 import tensorflow as tf
 import tensorflow_datasets as tfds 
 
+num_epochs = 256
 dataset_name = 'horses_or_humans'
 padding = "SAME"
 batch_size = 32
@@ -90,7 +91,6 @@ def model(x):
     
     return tf.nn.softmax(logits)
 
-
 def loss( pred , target ):
     return tf.losses.categorical_crossentropy( target , pred )
 
@@ -101,8 +101,6 @@ def train_step(model, inputs, outputs):
     grads = tape.gradient(current_loss, weights)
     optimizer.apply_gradients(zip(grads, weights))
     print(tf.reduce_mean(current_loss))
-
-num_epochs = 256
 
 for e in range( num_epochs ):
     for features in dataset:
