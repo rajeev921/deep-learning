@@ -1,0 +1,4 @@
+python2 train_PSPNet_VW.py --random-scale --random-mirror >> output_log.txt
+
+python2 inference_imagebyimage_VW.py
+
